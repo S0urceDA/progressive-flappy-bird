@@ -1,0 +1,5 @@
+flappy_env/
+.DS_Store
+games_played.txt
+high_score.txt
+time_achieved.txt
