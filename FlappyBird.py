@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 import random
 import time
+import os
 
 pygame.init()
 
@@ -33,15 +34,18 @@ play_once = 0
 click_twice = 0
 daily_high_score = 0
 
-with open("high_score.txt", "r") as file:
-    high_score = int(file.read())
+def check_file(filename, default_value):
+    if not os.path.exists(filename):
+        with open(filename, "w") as f:
+            f.write(str(default_value))
+        return default_value
+    with open(filename, "r") as f:
+        content = f.read().strip()
+        return content if filename == "time_achieved.txt" else int(content)
 
-with open("games_played.txt", "r") as file:
-    games_played = int(file.read())
-
-with open("time_achieved.txt", "r") as file:
-    time_achieved = file.read()
-    print(time_achieved)
+high_score = check_file("high_score.txt", 0)
+games_played = check_file("games_played.txt", 0)
+time_achieved = check_file("time_achieved.txt", int(time.time()))
 
 #load images
 bg = pygame.image.load('img/bg.png').convert_alpha()
