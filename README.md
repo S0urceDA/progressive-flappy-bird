@@ -1,7 +1,7 @@
-# Arcade Hardware Deployment: Progressive Flappy Bird
+# Progressive Flappy Bird
 
 ## Project Overview
-This project is a custom modification of a Python-based game engine designed specifically for physical arcade hardware. It was deployed to a dedicated cabinet running Windows in a high-traffic student environment, logging over **3,000+ played sessions** with zero reported crashes.
+This project is a custom modification of a Python-based Flappy Bird game. It was running on an Windows machine at the cafeteria, logging over **3,000+ played sessions** with zero reported crashes.
 
 Unlike standard clones, this version implements a **Progressive Difficulty Algorithm** that dynamically adjusts game physics based on player performance, designed to "lull the player into a false sense of security" before ramping up difficulty.
 
